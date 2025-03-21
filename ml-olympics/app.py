@@ -5,10 +5,13 @@ import plotly.graph_objects as go
 import numpy as np
 import os
 
+@st.cache_data
 def load_data():
-    file_path = os.path.join(os.path.dirname(__file__), "olympics2024.csv")
-    df = pd.read_csv(file_path)
+    csv_url = "https://raw.githubusercontent.com/Satyxm/ml-projects/main/ml-olympics/olympics2024.csv"
+    
+    df = pd.read_csv(csv_url)
     return df
+
 
 
 # Set page config
