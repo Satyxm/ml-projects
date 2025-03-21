@@ -3,6 +3,13 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import numpy as np
+import os
+
+def load_data():
+    file_path = os.path.join(os.path.dirname(__file__), "olympics2024.csv")
+    df = pd.read_csv(file_path)
+    return df
+
 
 # Set page config
 st.set_page_config(
